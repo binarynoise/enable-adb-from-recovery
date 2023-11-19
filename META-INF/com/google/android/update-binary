@@ -56,7 +56,9 @@ for f in $(find /mnt/system -name "*.prop"); do
     patch_prop persist.service.debuggable 1 "$f"
     patch_prop persist.sys.usb.config adb "$f"
     patch_prop ro.adb.secure 0 "$f"
+    patch_prop ro.build.type eng "$f"
     patch_prop ro.debuggable 1 "$f"
+    patch_prop ro.kernel.android.checkjni 1 "$f"
     patch_prop ro.secure 0 "$f"
 done
 exit 0
